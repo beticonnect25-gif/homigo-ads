@@ -22,7 +22,9 @@
     .hero-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:18px;box-shadow:var(--shadow)}.preview{width:100%;border-radius:16px;display:block;border:1px solid var(--border)}
     section{padding:30px 0}.section-head h2{margin:0 0 8px;font-size:30px}.section-head p{margin:0;color:var(--muted)}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px}.card h3{margin:8px 0 6px}.card p{margin:0;color:var(--muted)}
-    .screens{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.screen-item{border-radius:16px;border:1px solid var(--border);overflow:hidden;background:#fff}.screen-item img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}
+    .screens{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .screen-item{border-radius:16px;border:1px solid var(--border);overflow:hidden;background:#fff}
+    .screen-item img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}
     .download-box{background:linear-gradient(135deg,#fff,#fff2ef);border:1px solid var(--border);border-radius:20px;padding:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.store-links{display:flex;gap:10px;flex-wrap:wrap}.store-btn{padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:#fff;font-weight:700;color:var(--muted);pointer-events:none;opacity:.75}
     .footer{padding:36px 0 52px}.footer-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
     @media (max-width:920px){.hero-grid{grid-template-columns:1fr}.grid-3,.screens{grid-template-columns:1fr 1fr}}
@@ -67,12 +69,24 @@
     <section id="screens">
       <div class="container">
         <div class="screens">
-          <img src="assets/images/screenshots/Screen1.jpeg">
-          <img src="assets/images/screenshots/Screen2.jpeg">
-          <img src="assets/images/screenshots/Screen3.jpeg">
-          <img src="assets/images/screenshots/Screen4.jpeg">
-          <img src="assets/images/screenshots/Screen5.jpeg">
-          <img src="assets/images/screenshots/Screen6.jpeg">
+          <div class="screen-item">
+            <img src="assets/images/screenshots/Screen1.jpeg" alt="Screen 1">
+          </div>
+          <div class="screen-item">
+            <img src="assets/images/screenshots/Screen2.jpeg" alt="Screen 2">
+          </div>
+          <div class="screen-item">
+            <img src="assets/images/screenshots/Screen3.jpeg" alt="Screen 3">
+          </div>
+          <div class="screen-item">
+            <img src="assets/images/screenshots/Screen4.jpeg" alt="Screen 4">
+          </div>
+          <div class="screen-item">
+            <img src="assets/images/screenshots/Screen5.jpeg" alt="Screen 5">
+          </div>
+          <div class="screen-item">
+            <img src="assets/images/screenshots/Screen6.jpeg" alt="Screen 6">
+          </div>
         </div>
       </div>
     </section>
