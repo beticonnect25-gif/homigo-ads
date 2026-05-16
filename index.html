@@ -3,263 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HomiGo Budget | إدارة الميزانية بذكاء</title>
-  <meta name="description" content="HomiGo Budget تطبيق ذكي لإدارة الميزانية الشهرية والمصاريف بواجهة حديثة وسهلة." />
+  <title>Beti Connect | Smart Digital Solutions</title>
+  <meta name="description" content="Beti Connect منصة تجمع تطبيقات رقمية ذكية مثل HomiGo و HomiGo Car و HomiGo Budget في مكان واحد." />
+  <link rel="canonical" href="https://beticonnect.com/" />
   <style>
-    :root { --primary:#ff6f61; --primary-dark:#e85e52; --primary-soft:#fff1ef; --text:#1f2430; --muted:#667085; --bg:#fffaf9; --card:#fff; --border:#f0d8d3; --shadow:0 12px 30px rgba(255,111,97,.14); --max:1140px; }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:"Segoe UI",Tahoma,Arial,sans-serif;
-      background:radial-gradient(circle at 10% 10%,#ffe9e6 0%,transparent 30%),radial-gradient(circle at 90% 0,#efe9ff 0%,transparent 25%),var(--bg);
-      color:var(--text);
-      line-height:1.75
-    }
-    a{text-decoration:none;color:inherit}
-    .container{width:min(100% - 32px,var(--max));margin-inline:auto}
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:rgba(255,250,249,.88);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(240,216,211,.8)
-    }
-    .nav{
-      min-height:74px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:14px;
-      flex-wrap:wrap
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-size:22px;
-      font-weight:800
-    }
-    .site-logo{
-      width:46px;
-      height:46px;
-      object-fit:contain;
-      display:block;
-      border-radius:14px;
-      flex-shrink:0
-    }
-    .nav-links{
-      display:flex;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:14px
-    }
-    .nav-links a{
-      color:var(--muted);
-      font-weight:600;
-      font-size:15px
-    }
-    .lang{
-      display:flex;
-      align-items:center;
-      gap:8px
-    }
-    .lang select{
-      border:1px solid var(--border);
-      background:#fff;
-      border-radius:12px;
-      padding:8px 10px
-    }
-    .hero{padding:72px 0 48px}
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:24px;
-      align-items:center
-    }
-    .hero h1{
-      margin:0 0 16px;
-      font-size:clamp(28px,4vw,48px);
-      line-height:1.25
-    }
-    .hero p{
-      color:var(--muted);
-      margin:0 0 22px
-    }
-    .chips{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-bottom:22px
-    }
-    .chip{
-      background:var(--primary-soft);
-      border:1px solid var(--border);
-      color:var(--primary-dark);
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:600
-    }
-    .actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap
-    }
-    .btn{
-      padding:14px 20px;
-      border-radius:14px;
-      font-weight:700;
-      font-size:15px;
-      display:inline-flex;
-      align-items:center;
-      gap:8px
-    }
-    .btn-primary{
-      background:var(--primary);
-      color:#fff;
-      box-shadow:var(--shadow)
-    }
-    .btn-ghost{
-      background:#fff;
-      color:var(--text);
-      border:1px solid var(--border)
-    }
-    .hero-card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:24px;
-      padding:18px;
-      box-shadow:var(--shadow)
-    }
-    .preview{
-      width:100%;
-      max-height:640px;
-      border-radius:16px;
-      display:block;
-      border:1px solid var(--border);
-      object-fit:cover
-    }
-    section{padding:30px 0}
-    .section-head h2{
-      margin:0 0 8px;
-      font-size:30px
-    }
-    .section-head p{
-      margin:0;
-      color:var(--muted)
-    }
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px
-    }
-    .card{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:18px
-    }
-    .card h3{margin:8px 0 6px}
-    .card p{
-      margin:0;
-      color:var(--muted)
-    }
-    .screens{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px
-    }
-    .screen-item{
-      margin:0;
-      border-radius:16px;
-      border:1px solid var(--border);
-      overflow:hidden;
-      background:#fff;
-      aspect-ratio:9/16
-    }
-    .screen-item img{
-      display:block;
-      width:100%;
-      height:100%;
-      object-fit:cover
-    }
-    .download-box{
-      background:linear-gradient(135deg,#fff,#fff2ef);
-      border:1px solid var(--border);
-      border-radius:20px;
-      padding:24px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      flex-wrap:wrap
-    }
-    .store-links{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap
-    }
-    .store-btn{
-      padding:12px 16px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background:#fff;
-      font-weight:700;
-      color:var(--muted)
-    }
-    .footer{padding:36px 0 52px}
-    .footer-card{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:20px;
-      padding:16px 18px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      flex-wrap:wrap
-    }
-    @media (max-width:920px){
-      .hero-grid{grid-template-columns:1fr}
-      .grid-3,.screens{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width:620px){
-      .grid-3,.screens{grid-template-columns:1fr}
-      .section-head h2{font-size:25px}
-    }
+    :root{--primary:#8a6a58;--primary-dark:#5d4033;--soft:#f6f1eb;--soft2:#fffaf6;--text:#241f1c;--muted:#6f625b;--card:#fff;--border:#eadfd8;--shadow:0 18px 45px rgba(93,64,51,.12);--max:1160px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Segoe UI",Tahoma,Arial,sans-serif;background:radial-gradient(circle at 10% 0,#efe1d5 0,transparent 32%),radial-gradient(circle at 90% 10%,#fff2e8 0,transparent 28%),var(--soft2);color:var(--text);line-height:1.75}a{text-decoration:none;color:inherit}.container{width:min(100% - 32px,var(--max));margin:auto}.topbar{position:sticky;top:0;z-index:50;background:rgba(255,250,246,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:900}.logo{width:42px;height:42px;border-radius:14px;object-fit:cover}.links{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.links a{font-size:15px;font-weight:700;color:var(--muted)}.hero{padding:82px 0 46px}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:28px;align-items:center}.eyebrow{display:inline-flex;padding:7px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);color:var(--primary-dark);font-weight:800;font-size:13px}.hero h1{font-size:clamp(32px,5vw,58px);line-height:1.18;margin:18px 0 14px}.hero p{font-size:18px;color:var(--muted);margin:0 0 24px;max-width:620px}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:15px;font-weight:900;border:1px solid var(--border)}.btn-primary{background:var(--primary);color:#fff;box-shadow:var(--shadow)}.btn-light{background:#fff;color:var(--primary-dark)}.hero-card{background:linear-gradient(145deg,#fff,#f7eee8);border:1px solid var(--border);border-radius:28px;padding:24px;box-shadow:var(--shadow)}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{background:#fff;border:1px solid var(--border);border-radius:20px;padding:18px;min-height:120px}.mini strong{display:block;font-size:18px;margin-bottom:6px}.mini span{color:var(--muted);font-size:14px}section{padding:38px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}.section-head h2{font-size:32px;margin:0}.section-head p{margin:0;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid var(--border);border-radius:24px;padding:20px;box-shadow:0 10px 28px rgba(93,64,51,.07)}.card .icon{width:48px;height:48px;border-radius:16px;background:var(--soft);display:grid;place-items:center;font-size:24px;margin-bottom:12px}.card h3{margin:0 0 8px;font-size:21px}.card p{margin:0 0 16px;color:var(--muted)}.card a{color:var(--primary-dark);font-weight:900}.strip{background:#fff;border:1px solid var(--border);border-radius:26px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer{padding:36px 0 52px}.footer-card{border-top:1px solid var(--border);padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted)}@media(max-width:850px){.hero-grid,.cards{grid-template-columns:1fr}.section-head{display:block}.mini-grid{grid-template-columns:1fr}.links{gap:11px}.hero{padding-top:50px}}
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a href="#home" class="brand" id="home">
-        <img src="assets/images/screenshots/logo.jpeg.png" alt="HomiGo Budget Logo" class="site-logo">
-        <span>HomiGo Budget</span>
+      <a href="/" class="brand">
+        <img class="logo" src="assets/images/screenshots/logo.jpeg.png" alt="Beti Connect Logo">
+        <span>Beti Connect</span>
       </a>
-
-      <nav class="nav-links">
-        <a href="#features" data-i18n="nav_features">المميزات</a>
-        <a href="#screens" data-i18n="nav_screens">الصور</a>
-        <a href="#download" data-i18n="nav_download">التحميل</a>
-        <a href="description.html" data-i18n="nav_description">وصف التطبيق</a>
-        <a href="about.html" data-i18n="nav_about">عن التطبيق</a>
-        <a href="faq.html" data-i18n="nav_faq">الأسئلة</a>
-        <a href="support.html" data-i18n="nav_support">الدعم</a>
-        <a href="contact.html" data-i18n="nav_contact">التواصل</a>
-        <a href="privacy.html" data-i18n="nav_privacy">الخصوصية</a>
-        <a href="delete-account.html" data-i18n="nav_delete_account">حذف الحساب</a>
-        <a href="terms.html" data-i18n="nav_terms">الشروط</a>
+      <nav class="links">
+        <a href="/">الرئيسية</a>
+        <a href="apps.html">التطبيقات</a>
+        <a href="about.html">من نحن</a>
+        <a href="support.html">الدعم</a>
+        <a href="contact.html">التواصل</a>
+        <a href="privacy.html">الخصوصية</a>
       </nav>
-
-      <div class="lang">
-        <label for="lang-switch" data-i18n="lang_label">اللغة</label>
-        <select id="lang-switch">
-          <option value="ar">العربية</option>
-          <option value="en">English</option>
-        </select>
-      </div>
     </div>
   </header>
 
@@ -267,212 +32,61 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <h1 data-i18n="hero_title">تحكم كامل في مصروفاتك<br/>بأسلوب بسيط وذكي</h1>
-          <p data-i18n="hero_text">HomiGo Budget يساعدك على تتبع نفقاتك اليومية، إدارة الميزانية الشهرية، ومعرفة أين تذهب أموالك بدقة ووضوح.</p>
-
-          <div class="chips">
-            <span class="chip" data-i18n="chip_1">واجهة عربية + إنجليزية</span>
-            <span class="chip" data-i18n="chip_2">سهل وسريع</span>
-            <span class="chip" data-i18n="chip_3">تقارير واضحة</span>
-          </div>
-
+          <span class="eyebrow">Beti Connect Ltd</span>
+          <h1>منصة واحدة لتطبيقات رقمية أذكى وأبسط.</h1>
+          <p>نطوّر حلولًا رقمية عملية تساعد المستخدمين في الخدمات المنزلية، متابعة السيارة، وإدارة الميزانية من خلال تجربة واضحة وسهلة.</p>
           <div class="actions">
-            <a href="#download" class="btn btn-primary" data-i18n="cta_start">ابدأ الآن</a>
-            <a href="#screens" class="btn btn-ghost" data-i18n="cta_view">شاهد الصور</a>
+            <a class="btn btn-primary" href="apps.html">استعرض التطبيقات</a>
+            <a class="btn btn-light" href="contact.html">تواصل معنا</a>
           </div>
         </div>
-
         <div class="hero-card">
-          <img src="assets/images/screenshots/Screen1.jpeg" class="preview" alt="App screenshot">
+          <div class="mini-grid">
+            <div class="mini"><strong>HomiGo</strong><span>خدمات منزلية وطلبات ذكية.</span></div>
+            <div class="mini"><strong>HomiGo Car</strong><span>متابعة وصيانة وتشخيص السيارة.</span></div>
+            <div class="mini"><strong>HomiGo Budget</strong><span>إدارة الميزانية والمصاريف.</span></div>
+            <div class="mini"><strong>Privacy Center</strong><span>سياسات واضحة لكل تطبيق.</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="features">
+    <section id="apps">
       <div class="container">
         <div class="section-head">
-          <h2 data-i18n="features_title">مميزات قوية تساعدك يوميًا</h2>
-          <p data-i18n="features_text">كل ما تحتاجه لإدارة ميزانيتك في مكان واحد.</p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3 data-i18n="f1_t">إدارة ميزانية شهرية</h3>
-            <p data-i18n="f1_d">حدد ميزانيتك لكل شهر وتتبع المتبقي لحظيًا.</p>
-          </article>
-
-          <article class="card">
-            <h3 data-i18n="f2_t">تسجيل المصروفات بسهولة</h3>
-            <p data-i18n="f2_d">أضف مصروفاتك اليومية خلال ثوانٍ مع تصنيف واضح.</p>
-          </article>
-
-          <article class="card">
-            <h3 data-i18n="f3_t">متابعة أداء الإنفاق</h3>
-            <p data-i18n="f3_d">اعرف الأنماط المالية لتتخذ قرارات أفضل.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="screens">
-      <div class="container">
-        <div class="section-head">
-          <h2 data-i18n="screens_title">لقطات من التطبيق</h2>
-        </div>
-
-        <div class="screens">
-          <figure class="screen-item">
-            <img src="assets/images/screenshots/Screen1.jpeg" alt="Screenshot 1">
-          </figure>
-          <figure class="screen-item">
-            <img src="assets/images/screenshots/Screen2.jpeg" alt="Screenshot 2">
-          </figure>
-          <figure class="screen-item">
-            <img src="assets/images/screenshots/Screen3.jpeg" alt="Screenshot 3">
-          </figure>
-          <figure class="screen-item">
-            <img src="assets/images/screenshots/Screen4.jpeg" alt="Screenshot 4">
-          </figure>
-          <figure class="screen-item">
-            <img src="assets/images/screenshots/Screen5.jpeg" alt="Screenshot 5">
-          </figure>
-          <figure class="screen-item">
-            <img src="assets/images/screenshots/Screen6.jpeg" alt="Screenshot 6">
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section id="download">
-      <div class="container">
-        <div class="download-box">
           <div>
-            <h2 style="margin:0 0 8px;" data-i18n="download_title">حمّل التطبيق قريبًا</h2>
-            <p style="margin:0;color:var(--muted);" data-i18n="download_text">رابط المتجر.</p>
+            <h2>التطبيقات</h2>
+            <p>كل تطبيق له صفحة مستقلة بدل تكرار المعلومات في الرئيسية.</p>
           </div>
+          <a class="btn btn-light" href="apps.html">عرض الكل</a>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">🏠</div><h3>HomiGo</h3><p>منصة خدمات منزلية تربط العملاء بمقدمي الخدمات بطريقة منظمة.</p><a href="apps.html#homigo">عرض التفاصيل</a></article>
+          <article class="card"><div class="icon">🚗</div><h3>HomiGo Car</h3><p>تطبيق للسيارات يساعد المستخدم في المتابعة والتشخيص والتنبيهات.</p><a href="apps.html#homigo-car">عرض التفاصيل</a></article>
+          <article class="card"><div class="icon">💰</div><h3>HomiGo Budget</h3><p>تطبيق بسيط لإدارة المصاريف والميزانية الشهرية بوضوح.</p><a href="apps/homigo-budget.html">عرض التفاصيل</a></article>
+        </div>
+      </div>
+    </section>
 
-          <div class="store-links">
-            <a href="#" class="store-btn" data-i18n="store_google">Google Play (قريبًا)</a>
-            <a href="#" class="store-btn" data-i18n="store_apple">App Store (قريبًا)</a>
-          </div>
+    <section>
+      <div class="container strip">
+        <div>
+          <h2 style="margin:0 0 6px">مركز الخصوصية</h2>
+          <p style="margin:0;color:var(--muted)">الوصول إلى سياسات الخصوصية والدعم من مكان واحد.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="privacy.html">سياسة الخصوصية العامة</a>
+          <a class="btn btn-light" href="support.html">الدعم</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <div class="footer-card">
-        <p style="margin:0;" data-i18n="copyright">© 2026 HomiGo Budget. جميع الحقوق محفوظة.</p>
-        <nav class="nav-links">
-          <a href="about.html" data-i18n="nav_about">عن التطبيق</a>
-          <a href="faq.html" data-i18n="nav_faq">الأسئلة</a>
-          <a href="support.html" data-i18n="nav_support">الدعم</a>
-          <a href="contact.html" data-i18n="nav_contact">التواصل</a>
-          <a href="privacy.html" data-i18n="nav_privacy">الخصوصية</a>
-          <a href="delete-account.html" data-i18n="nav_delete_account">حذف الحساب</a>
-          <a href="terms.html" data-i18n="nav_terms">الشروط</a>
-          <a href="app-ads.txt" target="_blank" rel="noopener">app-ads.txt</a>
-        </nav>
-      </div>
+    <div class="container footer-card">
+      <span>© 2026 Beti Connect. All rights reserved.</span>
+      <nav class="links"><a href="terms.html">الشروط</a><a href="app-ads.txt">app-ads.txt</a><a href="sitemap.xml">Sitemap</a></nav>
     </div>
   </footer>
-
-  <script>
-    const i18n = {
-      ar: {
-        title:'HomiGo Budget | إدارة الميزانية بذكاء',
-        lang_label:'اللغة',
-        nav_features:'المميزات',
-        nav_delete_account:'حذف الحساب',
-        nav_screens:'الصور',
-        nav_download:'التحميل',
-        nav_description:'وصف التطبيق',
-        nav_about:'عن التطبيق',
-        nav_faq:'الأسئلة',
-        nav_support:'الدعم',
-        nav_contact:'التواصل',
-        nav_privacy:'الخصوصية',
-        nav_terms:'الشروط',
-        hero_title:'تحكم كامل في مصروفاتك<br/>بأسلوب بسيط وذكي',
-        hero_text:'HomiGo Budget يساعدك على تتبع نفقاتك اليومية، إدارة الميزانية الشهرية، ومعرفة أين تذهب أموالك بدقة ووضوح.',
-        chip_1:'واجهة عربية + إنجليزية',
-        chip_2:'سهل وسريع',
-        chip_3:'تقارير واضحة',
-        cta_start:'ابدأ الآن',
-        cta_view:'شاهد الصور',
-        features_title:'مميزات قوية تساعدك يوميًا',
-        features_text:'كل ما تحتاجه لإدارة ميزانيتك في مكان واحد.',
-        f1_t:'إدارة ميزانية شهرية',
-        f1_d:'حدد ميزانيتك لكل شهر وتتبع المتبقي لحظيًا.',
-        f2_t:'تسجيل المصروفات بسهولة',
-        f2_d:'أضف مصروفاتك اليومية خلال ثوانٍ مع تصنيف واضح.',
-        f3_t:'متابعة أداء الإنفاق',
-        f3_d:'اعرف الأنماط المالية لتتخذ قرارات أفضل.',
-        screens_title:'لقطات من التطبيق',
-        screens_text:'تم تجهيز هذا القسم لتستبدل الصور الحالية بصورك الفعلية لاحقًا.',
-        download_title:'حمّل التطبيق قريبًا',
-        download_text:'روابط المتاجر مضافة كأماكن مخصصة، وبعد النشر يمكنك وضع الروابط الفعلية مباشرة.',
-        store_google:'Google Play (قريبًا)',
-        store_apple:'App Store (قريبًا)',
-        copyright:'© 2026 HomiGo Budget. جميع الحقوق محفوظة.'
-      },
-      en: {
-        title:'HomiGo Budget | Smart Budget Management',
-        lang_label:'Language',
-        nav_features:'Features',
-        nav_screens:'Screenshots',
-        nav_download:'Download',
-        nav_description:'App Description',
-        nav_about:'About',
-        nav_faq:'FAQ',
-        nav_delete_account:'Delete Account',
-        nav_support:'Support',
-        nav_contact:'Contact',
-        nav_privacy:'Privacy',
-        nav_terms:'Terms',
-        hero_title:'Take full control of your spending<br/>with a simple smart experience',
-        hero_text:'HomiGo Budget helps you track daily expenses, manage monthly budgets, and clearly understand where your money goes.',
-        chip_1:'Arabic + English UI',
-        chip_2:'Simple & Fast',
-        chip_3:'Clear Insights',
-        cta_start:'Get Started',
-        cta_view:'View Screens',
-        features_title:'Powerful features for everyday use',
-        features_text:'Everything you need to manage your budget in one place.',
-        f1_t:'Monthly Budget Planning',
-        f1_d:'Set monthly budgets and track remaining balance instantly.',
-        f2_t:'Quick Expense Logging',
-        f2_d:'Add daily expenses in seconds with clear categorization.',
-        f3_t:'Spending Insights',
-        f3_d:'Understand your spending patterns to make better decisions.',
-        screens_title:'App Screenshots',
-        screens_text:'This section is ready for you to replace placeholders with real app screenshots.',
-        download_title:'Download Coming Soon',
-        download_text:'Store links are placeholders now; add your real links after publishing.',
-        store_google:'Google Play (Coming Soon)',
-        store_apple:'App Store (Coming Soon)',
-        copyright:'© 2026 HomiGo Budget. All rights reserved.'
-      }
-    };
-
-    function applyLang(lang){
-      const d = i18n[lang] || i18n.ar;
-      document.documentElement.lang = lang;
-      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-      document.title = d.title;
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const k = el.dataset.i18n;
-        if(d[k]) el.innerHTML = d[k];
-      });
-      localStorage.setItem('site_lang', lang);
-    }
-
-    const sw = document.getElementById('lang-switch');
-    const saved = localStorage.getItem('site_lang') || 'ar';
-    sw.value = saved;
-    applyLang(saved);
-    sw.addEventListener('change', e => applyLang(e.target.value));
-  </script>
 </body>
 </html>
